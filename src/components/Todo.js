@@ -19,6 +19,7 @@ import useStorage from '../hooks/storage';
 import {getKey} from "../lib/util";
 
 function Todo() {
+  
   const [items, putItems] = React.useState([
       /* テストコード 開始 */
     { key: getKey(), text: '日本語の宿題', done: false },
@@ -27,10 +28,20 @@ function Todo() {
     /* テストコード 終了 */
   ]);
   
+  const handleInput = (item) => {
+    putItems([...items, item])
+  }
+
   return (
     <div className="panel">
       <div className="panel-heading">
         ITSS ToDoアプリ
+      </div>
+      <div className="panel-block">
+        <Input 
+          placeholder='Todoを入力してください'
+          handleInput={handleInput}
+        />
       </div>
       {items.map(item => (
         <TodoItem 
