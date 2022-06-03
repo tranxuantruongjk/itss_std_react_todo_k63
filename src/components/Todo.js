@@ -26,7 +26,7 @@ function Todo() {
     { key: getKey(), text: '明日の準備をする', done: false },
     /* テストコード 終了 */
   ]);
-
+  
   return (
     <div className="panel">
       <div className="panel-heading">
