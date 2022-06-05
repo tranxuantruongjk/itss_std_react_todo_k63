@@ -27,9 +27,14 @@ function Todo() {
     { key: getKey(), text: '明日の準備をする', done: false },
     /* テストコード 終了 */
   ]);
-  
+  const [filterItems, setFilterItems] = useState([])
+  // setFilterItems(items);
   const handleInput = (item) => {
     putItems([...items, item])
+  }
+
+  const handleFilter = (items) => {
+    setFilterItems(items)
   }
 
   return (
@@ -43,14 +48,18 @@ function Todo() {
           handleInput={handleInput}
         />
       </div>
-      {items.map(item => (
+      <Filter
+        items={items}
+        handleFilter={handleFilter} 
+      />
+      {filterItems.map(item => (
         <TodoItem 
           key={item.key}
           item={item}
         />
       ))}
       <div className="panel-block">
-        {items.length} items
+        {filterItems.length} items
       </div>
     </div>
   );

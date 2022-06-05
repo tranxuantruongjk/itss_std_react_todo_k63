@@ -6,11 +6,17 @@ import '../styles/main.css';
 　・チェックボックスにチェックが入っているか管理する
 　・チェックボックスにチェックが入っているかアイテムをグレーアウトする
 */
-function TodoItem( {item, onClick} ) {
+function TodoItem( {item} ) {
   const [checked, setChecked] = useState(false);
 
   const handleClick = () => {
     setChecked(!checked);
+    if(item.done) {
+      item.done = false;
+    }
+    else {
+      item.done = true;
+    }
   }
   
   return (

@@ -11,8 +11,8 @@ function Input( {placeholder, handleInput} ) {
 
   const handleChange = (e) => {
     let text = e.target.value;
-    if (text)
-      setItem({ key: getKey(), text: text, done: false})
+    // if (text)
+    setItem({ key: getKey(), text: text, done: false})
   }
 
   const onKeyDown = (e) =>
