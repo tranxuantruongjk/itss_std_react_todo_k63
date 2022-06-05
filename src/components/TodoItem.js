@@ -12,6 +12,7 @@ function TodoItem( {item, onClick} ) {
   const handleClick = () => {
     setChecked(!checked);
   }
+
   
   return (
     <label className="panel-block">
