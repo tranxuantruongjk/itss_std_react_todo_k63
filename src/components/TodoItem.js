@@ -20,9 +20,9 @@ function TodoItem( {item} ) {
   }
   
   return (
-    <label className="panel-block">
-      <input type="checkbox" onClick={handleClick} />
-      <p className={checked ? "has-text-grey-light" : ""}>{item.text}</p>
+    <label className="panel-block ">
+      <input type="checkbox" onChange={handleClick} checked={item.done} />
+      <p className={item.done ? "has-text-grey-light" : ""}>{item.text}</p>
     </label>
   );
 }

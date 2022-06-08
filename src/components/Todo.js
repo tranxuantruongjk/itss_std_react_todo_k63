@@ -27,7 +27,7 @@ function Todo() {
     { key: getKey(), text: '明日の準備をする', done: false },
     /* テストコード 終了 */
   ]);
-  const [filterItems, setFilterItems] = useState([])
+  const [filterItems, setFilterItems] = useState(items);
   // setFilterItems(items);
   const handleInput = (item) => {
     putItems([...items, item])
@@ -36,6 +36,8 @@ function Todo() {
   const handleFilter = (items) => {
     setFilterItems(items)
   }
+
+  console.log(items);
 
   return (
     <div className="panel">
